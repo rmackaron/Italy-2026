@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Italia · MMXXVI</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Italia">
+<meta name="theme-color" content="#16292a">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Crect width='180' height='180' rx='40' fill='%2316292a'/%3E%3Ctext x='50%25' y='60%25' font-size='104' text-anchor='middle' dominant-baseline='middle' fill='%23c9a24b' font-family='Georgia,serif' font-style='italic'%3EI%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Archivo:wght@400;500;600&family=Archivo+Narrow:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16292a; --card:#1b3132; --paper:#f3ead6; --paper-dim:#c9bfa6;
+    --gilt:#c9a24b; --gilt-soft:#e0c579; --terra:#b5502f; --sea:#5c9a97;
+    --line:rgba(201,162,75,.22); --line-soft:rgba(243,234,214,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);color:var(--paper);
+    font-family:'Archivo',system-ui,sans-serif;line-height:1.5;font-size:15px;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(120% 80% at 50% -10%, rgba(92,154,151,.10), transparent 60%),
+      radial-gradient(100% 60% at 50% 110%, rgba(181,80,47,.08), transparent 55%);
+    background-attachment:fixed;
+  }
+  .mast{padding:44px 22px 26px;text-align:center}
+  .eyebrow{font-family:'Archivo Narrow',sans-serif;font-weight:600;letter-spacing:.42em;
+    text-transform:uppercase;font-size:10.5px;color:var(--gilt);margin-bottom:14px}
+  .mast h1{font-family:'Fraunces',Georgia,serif;font-weight:400;
+    font-size:clamp(46px,17vw,74px);line-height:.9;letter-spacing:-.01em;color:var(--paper)}
+  .mast h1 em{font-style:italic;color:var(--gilt-soft)}
+  .mast .rule{width:44px;height:2px;background:var(--gilt);margin:18px auto 12px}
+  .mast .sub{font-family:'Archivo Narrow',sans-serif;letter-spacing:.24em;
+    text-transform:uppercase;font-size:11px;color:var(--paper-dim)}
+
+  .nav{position:sticky;top:0;z-index:20;display:flex;justify-content:center;gap:2px;
+    padding:10px;background:rgba(22,41,42,.86);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line)}
+  .nav a{font-family:'Archivo Narrow',sans-serif;font-weight:600;letter-spacing:.12em;
+    text-transform:uppercase;font-size:11px;color:var(--paper-dim);text-decoration:none;
+    padding:7px 12px;border-radius:2px;transition:color .2s}
+  .nav a:active,.nav a:hover{color:var(--gilt)}
+
+  main{max-width:620px;margin:0 auto;padding:8px 20px 60px}
+
+  .plate{margin-top:40px}
+  .plate-hd{display:flex;align-items:flex-end;gap:14px;padding-bottom:12px;
+    margin-bottom:8px;border-bottom:1px solid var(--line)}
+  .plate-no{font-family:'Fraunces',serif;font-style:italic;font-size:40px;line-height:.8;
+    color:var(--terra);flex:0 0 auto}
+  .plate-tt{flex:1}
+  .plate-tt h2{font-family:'Fraunces',serif;font-weight:500;font-size:27px;line-height:1;
+    letter-spacing:-.01em;color:var(--paper)}
+  .plate-tt .loc{font-family:'Archivo Narrow',sans-serif;letter-spacing:.18em;
+    text-transform:uppercase;font-size:10.5px;color:var(--gilt);margin-top:5px}
+
+  .day{position:relative;padding:16px 0 16px 26px;border-left:1px solid var(--line-soft);
+    margin-left:6px}
+  .day::before{content:"";position:absolute;left:-4.5px;top:22px;width:8px;height:8px;
+    border-radius:50%;background:var(--ink);border:1.5px solid var(--gilt)}
+  .day.move::before{background:var(--gilt);border-color:var(--gilt)}
+  .day-hd{display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+    margin-bottom:9px}
+  .day-date{font-family:'Archivo Narrow',sans-serif;font-weight:600;letter-spacing:.08em;
+    text-transform:uppercase;font-size:12px;color:var(--paper)}
+  .day-date .dow{color:var(--sea);margin-right:6px}
+  .day-tag{font-family:'Archivo Narrow',sans-serif;font-weight:600;letter-spacing:.14em;
+    text-transform:uppercase;font-size:9.5px;color:var(--ink);background:var(--gilt-soft);
+    padding:3px 8px;border-radius:2px;white-space:nowrap}
+  .day.move .day-tag{background:var(--terra);color:var(--paper)}
+
+  .items{list-style:none}
+  .items li{display:flex;gap:11px;padding:3px 0;font-size:14.5px;color:#eae0c8}
+  .items .tm{flex:0 0 66px;font-family:'Archivo Narrow',sans-serif;font-weight:600;
+    font-size:12px;color:var(--gilt);padding-top:1.5px;letter-spacing:.02em}
+  .items .tx{flex:1}
+  .items em{font-style:italic;color:var(--paper-dim)}
+  a.place{color:var(--paper);text-decoration:none;
+    border-bottom:1px solid rgba(201,162,75,.45);padding-bottom:.5px;
+    transition:border-color .2s,color .2s}
+  a.place:active,a.place:hover{color:var(--gilt-soft);border-color:var(--gilt)}
+  .michelin{color:var(--terra);font-size:11px;vertical-align:.5px}
+
+  .note{margin-top:11px;padding-top:9px;border-top:1px dashed var(--line);
+    font-size:11.5px;color:var(--paper-dim);line-height:1.55}
+  .note b{color:var(--sea);font-weight:600;font-family:'Archivo Narrow',sans-serif;
+    letter-spacing:.06em;text-transform:uppercase;font-size:10px}
+  .note a.place{font-size:11.5px}
+
+  .colophon{text-align:center;margin-top:56px;padding-top:26px;border-top:1px solid var(--line)}
+  .colophon .fin{font-family:'Fraunces',serif;font-style:italic;font-size:22px;color:var(--gilt-soft)}
+  .colophon .meta{font-family:'Archivo Narrow',sans-serif;letter-spacing:.2em;
+    text-transform:uppercase;font-size:9.5px;color:var(--paper-dim);margin-top:9px}
+
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="eyebrow">A Private Itinerary</div>
+  <h1><em>Italia</em></h1>
+  <div class="rule"></div>
+  <div class="sub">16 – 26 July · MMXXVI</div>
+</header>
+
+<nav class="nav">
+  <a href="#p1">Venezia</a>
+  <a href="#p2">Firenze</a>
+  <a href="#p3">Roma</a>
+  <a href="#p4">Amalfi</a>
+</nav>
+
+<main>
+
+  <section class="plate" id="p1">
+    <div class="plate-hd">
+      <div class="plate-no">I</div>
+      <div class="plate-tt"><h2>Venezia</h2>
+        <div class="loc">The Gritti Palace · on the Grand Canal</div></div>
+    </div>
+
+    <div class="day move">
+      <div class="day-hd"><div class="day-date"><span class="dow">Thu</span>16 July</div>
+        <div class="day-tag">Transit</div></div>
+      <ul class="items">
+        <li><span class="tm">6:00 pm</span><span class="tx">Depart DFW · AA130, Flagship First (D23 lounge)</span></li>
+        <li><span class="tm">10:55 am</span><span class="tx">Arrive → private deluxe wooden water taxi to hotel</span></li>
+      </ul>
+      <div class="note"><b>Transfer</b> — Airport pickup &amp; private water taxi confirmed · €630</div>
+    </div>
+
+    <div class="day">
+      <div class="day-hd"><div class="day-date"><span class="dow">Fri</span>17 July</div></div>
+      <ul class="items">
+        <li><span class="tm">1:00 pm</span><span class="tx">Light lunch — Riva Bar or St. Mark's Square</span></li>
+        <li><span class="tm">2–7 pm</span><span class="tx">At leisure through the calli of Venezia</span></li>
+        <li><span class="tm">7:00 pm</span><span class="tx">Gondola at dusk <em>(to confirm)</em></span></li>
+        <li><span class="tm">8:00 pm</span><span class="tx">Dinner — <a class="place" href="https://www.google.com/maps/search/?api=1&query=Club%20del%20Doge%20Ristorante%20Gritti%20Palace%20Venice" target="_blank" rel="noopener">Club del Doge</a>, terrace</span></li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-hd"><div class="day-date"><span class="dow">Sat</span>18 July</div></div>
+      <ul class="items">
+        <li><span class="tm">7:30 am</span><span class="tx">Breakfast at the hotel</span></li>
+        <li><span class="tm">8:00 am</span><span class="tx">Optional Mass at St. Mark's</span></li>
+        <li><span class="tm">9–12</span><span class="tx">Private walking tour — St. Mark's Basilica &amp; Doge's Palace</span></li>
+        <li><span class="tm">12:30 pm</span><span class="tx">Lunch — <a class="place" href="https://www.google.com/maps/search/?api=1&query=Harry%27s%20Bar%20Venice" target="_blank" rel="noopener">Harry's Bar</a></span></li>
+        <li><span class="tm">2:30–6:30</span><span class="tx">Private Riva boat — Venezia &amp; Murano</span></li>
+        <li><span class="tm">8:00 pm</span><span class="tx">Dinner — <a class="place" href="https://www.alajmo.it/en/pages/homepage-ristorante-quadri" target="_blank" rel="noopener">Ristorante Quadri</a> <span class="michelin">★</span></span></li>
+      </ul>
+      <div class="note"><b>Arranged</b> — Guided tour €330 + tickets · Riva boat tour €1,800</div>
+    </div>
+  </section>
+
+  <section class="plate" id="p2">
+    <div class="plate-hd">
+      <div class="plate-no">II</div>
+      <div class="plate-tt"><h2>Firenze &amp; Toscana</h2>
+        <div class="loc">The St. Regis Florence · Piazza Ognissanti</div></div>
+    </div>
+
+    <div class="day move">
+      <div class="day-hd"><div class="day-date"><span class="dow">Sun</span>19 July</div>
+        <div class="day-tag">Transit</div></div>
+      <ul class="items">
+        <li><span class="tm">8:00 am</span><span class="tx">Breakfast at the hotel</span></li>
+        <li><span class="tm">9:40 am</span><span class="tx">Depart hotel</span></li>
+        <li><span class="tm">10:26 am</span><span class="tx">Frecciarossa to Florence · Executive Class</span></li>
+        <li><span class="tm">12:39 pm</span><span class="tx">Arrive (lunch aboard) · 8-min walk to <a class="place" href="https://www.marriott.com/en-us/hotels/flrxr-the-st-regis-florence/overview/" target="_blank" rel="noopener">St. Regis</a></span></li>
+        <li><span class="tm">2–6 pm</span><span class="tx">Private tour — Accademia (David) + Uffizi</span></li>
+        <li><span class="tm">8:00 pm</span><span class="tx">Dinner — <a class="place" href="https://www.google.com/maps/search/?api=1&query=Ristorante%20Sabatini%20Florence" target="_blank" rel="noopener">Ristorante Sabatini</a></span></li>
+      </ul>
+      <div class="note"><b>Arranged</b> — Water taxi to station €315 · Train $159 pp · Guided tour €400 + tickets</div>
+    </div>
+
+    <div class="day">
+      <div class="day-hd"><div class="day-date"><span class="dow">Mon</span>20 July</div>
+        <div class="day-tag">Chianti</div></div>
+      <ul class="items">
+        <li><span class="tm">8:00 am</span><span class="tx">Breakfast at the hotel</span></li>
+        <li><span class="tm">9:00 am</span><span class="tx">Depart for the hills</span></li>
+        <li><span class="tm">10:30–1:30</span><span class="tx"><a class="place" href="https://www.castellodiama.com/" target="_blank" rel="noopener">Castello di Ama</a> — private tasting &amp; three-course lunch</span></li>
+        <li><span class="tm">2:30–4:30</span><span class="tx">Private tasting — <a class="place" href="https://www.antinori.it/en/tenuta/antinori-nel-chianti-classico/" target="_blank" rel="noopener">Antinori nel Chianti Classico</a></span></li>
+        <li><span class="tm">5:59 pm</span><span class="tx">Frecciarossa to Rome</span></li>
+      </ul>
+      <div class="note"><b>Arranged</b> — Private driver for the day €950 · Tasting &amp; lunch €289 pp · Antinori tasting (price TBC) · Train $159 pp</div>
+    </div>
+  </section>
+
+  <section class="plate" id="p3">
+    <div class="plate-hd">
+      <div class="plate-no">III</div>
+      <div class="plate-tt"><h2>Roma</h2>
+        <div class="loc">Rocco Forte House · Piazza di Spagna</div></div>
+    </div>
+
+    <div class="day move">
+      <div class="day-hd"><div class="day-date"><span class="dow">Mon</span>20 July</div>
+        <div class="day-tag">Arrival</div></div>
+      <ul class="items">
+        <li><span class="tm">7:35 pm</span><span class="tx">Arrive Roma · 10-min drive to <a class="place" href="https://www.roccofortehotels.com/rocco-forte-house/piazza-di-spagna/" target="_blank" rel="noopener">Rocco Forte House</a></span></li>
+        <li><span class="tm">8:30 pm</span><span class="tx">Dinner — <a class="place" href="https://www.google.com/maps/search/?api=1&query=Ristorante%20da%20Nino%20Rome" target="_blank" rel="noopener">Ristorante da Nino</a> (walkable)</span></li>
+      </ul>
+      <div class="note"><b>Transfer</b> — Van, station to hotel · €170</div>
+    </div>
+
+    <div class="day">
+      <div class="day-hd"><div class="day-date"><span class="dow">Tue</span>21 July</div></div>
+      <ul class="items">
+        <li><span class="tm">5:55–8</span><span class="tx"><em>Key Master Experience</em> — unlock the Sistine Chapel, semi-private Vatican tour &amp; breakfast (&lt;20 guests)</span></li>
+        <li><span class="tm">Day</span><span class="tx">At leisure — Trevi Fountain, Pantheon</span></li>
+        <li><span class="tm">8:00 pm</span><span class="tx">Dinner — to be decided</span></li>
+      </ul>
+      <div class="note"><b>Arranged</b> — Key Master Experience €699 pp</div>
+    </div>
+
+    <div class="day">
+      <div class="day-hd"><div class="day-date"><span class="dow">Wed</span>22 July</div></div>
+      <ul class="items">
+        <li><span class="tm">8:00 am</span><span class="tx">Breakfast at the hotel</span></li>
+        <li><span class="tm">9–12</span><span class="tx">Private Ancient Rome tour — Colosseum, Forum, Palatine (skip the line)</span></li>
+        <li><span class="tm">Afternoon</span><span class="tx">At leisure</span></li>
+        <li><span class="tm">8:00 pm</span><span class="tx">Dinner — to be decided</span></li>
+      </ul>
+      <div class="note"><b>Arranged</b> — Private guide €850 + Mercedes Viano, 3 hrs €360</div>
+    </div>
+  </section>
+
+  <section class="plate" id="p4">
+    <div class="plate-hd">
+      <div class="plate-no">IV</div>
+      <div class="plate-tt"><h2>Costiera Amalfitana</h2>
+        <div class="loc">Il San Pietro di Positano</div></div>
+    </div>
+
+    <div class="day move">
+      <div class="day-hd"><div class="day-date"><span class="dow">Thu</span>23 July</div>
+        <div class="day-tag">Transit · Pompeii</div></div>
+      <ul class="items">
+        <li><span class="tm">8:00 am</span><span class="tx">Breakfast at the hotel</span></li>
+        <li><span class="tm">9:00 am</span><span class="tx">Depart Roma</span></li>
+        <li><span class="tm">12–2 pm</span><span class="tx">Pompeii — private guided tour</span></li>
+        <li><span class="tm">3:30 pm</span><span class="tx">Arrive Positano — <a class="place" href="https://ilsanpietro.com/" target="_blank" rel="noopener">Il San Pietro</a></span></li>
+        <li><span class="tm">8:00 pm</span><span class="tx">Dinner — <a class="place" href="https://www.google.com/maps/search/?api=1&query=Zass%20Il%20San%20Pietro%20Positano" target="_blank" rel="noopener">Zass</a> <span class="michelin">★</span></span></li>
+      </ul>
+      <div class="note"><b>Arranged</b> — Mercedes V-Class €800 + €80/hr Pompeii stop · Guide €200 + tickets</div>
+    </div>
+
+    <div class="day">
+      <div class="day-hd"><div class="day-date"><span class="dow">Fri</span>24 July</div>
+        <div class="day-tag">Resort</div></div>
+      <ul class="items">
+        <li><span class="tm">8:00 am</span><span class="tx">Breakfast at the hotel</span></li>
+        <li><span class="tm">11:30 am</span><span class="tx">Complimentary hotel boat cruise</span></li>
+        <li><span class="tm">1:00 pm</span><span class="tx">Lunch — <a class="place" href="https://www.google.com/maps/search/?api=1&query=Il%20Carlino%20Il%20San%20Pietro%20Positano" target="_blank" rel="noopener">Il Carlino</a>, beach club</span></li>
+        <li><span class="tm">3–4 pm</span><span class="tx">Tennis</span></li>
+        <li><span class="tm">7:30 pm</span><span class="tx">Dinner — <a class="place" href="https://www.google.com/maps/search/?api=1&query=La%20Sponda%20Le%20Sirenuse%20Positano" target="_blank" rel="noopener">La Sponda</a> <span class="michelin">★</span>, Positano</span></li>
+      </ul>
+      <div class="note"><b>Consider</b> — Morning or afternoon spa · Free shuttle to Positano for dinner</div>
+    </div>
+
+    <div class="day">
+      <div class="day-hd"><div class="day-date"><span class="dow">Sat</span>25 July</div>
+        <div class="day-tag">Yacht</div></div>
+      <ul class="items">
+        <li><span class="tm">8:00 am</span><span class="tx">Breakfast at the hotel</span></li>
+        <li><span class="tm">10–6</span><span class="tx">Private yacht — <em>Joey II</em>, Morgan 44</span></li>
+        <li><span class="tm">7:30 pm</span><span class="tx">Dinner — <a class="place" href="https://www.google.com/maps/search/?api=1&query=Donna%20Rosa%20Montepertuso%20Positano" target="_blank" rel="noopener">Donna Rosa</a></span></li>
+      </ul>
+      <div class="note"><b>Arranged</b> — Yacht €2,600, swim stops &amp; lunch at <a class="place" href="https://www.google.com/maps/search/?api=1&query=Lo%20Scoglio%20da%20Tommaso%20Nerano" target="_blank" rel="noopener">Lo Scoglio da Tommaso</a> · Dinner shuttle 7:15 pm</div>
+    </div>
+
+    <div class="day move">
+      <div class="day-hd"><div class="day-date"><span class="dow">Sun</span>26 July</div>
+        <div class="day-tag">Departure</div></div>
+      <ul class="items">
+        <li><span class="tm">8:00 am</span><span class="tx">Breakfast at the hotel</span></li>
+        <li><span class="tm">11:00 am</span><span class="tx">Depart hotel</span></li>
+        <li><span class="tm">3:00 pm</span><span class="tx">Flight NAP → ORD · Business</span></li>
+      </ul>
+      <div class="note"><b>Transfer</b> — Private transfer confirmed · €320</div>
+    </div>
+  </section>
+
+  <div class="colophon">
+    <div class="fin">Buon viaggio</div>
+    <div class="meta">Quattro città · Undici giorni</div>
+  </div>
+
+</main>
+</body>
+</html>
